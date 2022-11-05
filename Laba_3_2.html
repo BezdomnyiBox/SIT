@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html >
+<head>
+   <meta charset="utf-8" />
+   <title>Лабораторная работа №2</title>
+</head>
+<body>
+ <ul type="none">
+      <li ><a href="Laba_3.html">Самые сильные футболисты</a></li>      
+      <li><a href="Laba_3_2.html"><b><big>Список самых сильных футболистов</big></b></a></li>
+</ul>
+<hr>
+<details>
+    <summary> График </summary>
+    <form>
+        <table>
+          <tr>
+            <th>Значениe по оси OX</th>
+            <th>Результат</th>
+          </tr>
+          <tr>
+            <td>
+              <input type="radio" name="ox" value="0">Рейтинг<br>
+              <input type="radio" name="ox" value="1">Рост<br>
+              <input type="radio" name="ox" value="3">Год рождения<br>
+            </td>
+            <td>
+              <input type="checkbox" name="oy" value="0">Количество игроков<br>
+              <input type="checkbox" name="oy" value="1">Количество игроков<br>
+			  <input type="checkbox" name="oy" value="3">Количество игроков<br>
+            </td>
+          </tr>
+        </table>
+		<input type=button value="Построить">
+		<p>Здесь будет график</p>
+	</form>	
+</details> 
+<details>
+    <summary> Фильтр</summary>
+    <form>
+        <p>
+           <label for="structure">Имя:</label>
+		   <input type=text name="familia">
+        </p>
+        <p>
+		    <label for="category">Амплуа:</label>
+            <input type=text name="category">
+        </p>
+        <p>
+		   <label for="country">Национальность:</label>
+          <input type=text name="country">
+        </p>
+		 <p>
+		   <label for="club">Клуб:</label>
+           <input type=text name="club">
+        </p>
+ 		 <p>
+		  <label for="yFrom">Год рождения: </label>
+           от <input type=text name="yFrom"> до <input type=text name="yFo">
+        </p>
+        <p>
+		   <label for="hFrom">Рост:</label>
+           от <input type=text name="hFrom"> до <input type=text name="hTo">
+        </p>
+		<p>
+		  <label for="rFrom">Рейтинг: </label>
+           от <input type=text name="rFrom"> до <input type=text name="rFo">
+        </p>
+        <input type=button value="Найти">		
+	</form>	
+</details> 
+<details>
+    <summary>Сортировка</summary>
+    <form>
+	  <p>
+          Первый уровень:
+          <select name="sortFirst">
+            <option value="0">Нет</option>
+            <option value="1">Имя</option>
+            <option value="2">Амплуа</option>
+            <option value="3">Национальность</option>
+            <option value="4">Клуб</option>
+			<option value="5">Год рождения</option>
+            <option value="6">Рост</option>
+			<option value="7">Рейтинг</option>
+ 
+          </select>
+          по убыванию? <input  type="checkbox"  name= "descFirst" >
+        </p>  
+        <p>
+          Второй уровень:
+		  <select name="sortSecond">
+           <option value="0">Нет</option>
+            <option value="1">Имя</option>
+            <option value="2">Амплуа</option>
+            <option value="3">Национальность</option>
+            <option value="4">Клуб</option>
+			<option value="5">Год рождения</option>
+            <option value="6">Рост</option>
+			<option value="7">Рейтинг</option>
+ 
+          </select>
+          по убыванию? <input  type="checkbox"  name= "descSecond" >
+        </p>
+        <p>
+          Третий уровень:
+          <select name="sortThird">
+            <option value="0">Нет</option>
+            <option value="1">Имя</option>
+            <option value="2">Амплуа</option>
+            <option value="3">Национальность</option>
+            <option value="4">Клуб</option>
+			<option value="5">Год рождения</option>
+            <option value="6">Рост</option>
+			<option value="7">Рейтинг</option>
+ 
+          </select>
+          по убыванию? <input  type="checkbox"  name= "descThird" >
+        </p>
+      <input type=button value="Сортировать">		
+	</form>	
+</details> 
+<br>    
+<table border="1" cellspacing="0" cellpadding="5">
+	<tr><th>Имя</th><th>Амплуа</th><th>Национальность</th><th>Клуб</th><th>Год рождения</th><th>Рост, см</th><th>Рейтинг</td></tr>
+	
+	<tr><td>Месси</td><td>Правый вингер</td><td>Аргентина</td><td>ПСЖ</td><td>1987</td><td>169</td><td>93</td></tr>
+	<tr><td>Неймар</td><td>Левый вингер</td><td>Бразилия</td><td>ПСЖ</td><td>1992</td><td>174</td><td>89</td></tr>
+	<tr><td>Роналду</td><td>Нападающий</td><td>Португалия</td><td>Манчестер Юнайтед</td><td>1985</td><td>186</td><td>90</td></tr>
+	<tr><td>Холанд</td><td>Нападающий</td><td>Норвегия</td><td>Манчестер Сити</td><td>1999</td><td>200</td><td>88</td></tr>
+	<tr><td>Мбаппе</td><td>Нападающий</td><td>Франция</td><td>ПСЖ</td><td>1998</td><td>180</td><td>92</td></tr>
+	<tr><td>Зидан</td><td>Атакующий полузащитник</td><td>Франция</td><td>Реал Мадрид</td><td>1970</td><td>185</td><td>94</td></tr>
+	<tr><td>Марадона</td><td>Атакующий полузащитник</td><td>Аргентина</td><td>Наполи</td><td>1960</td><td>165</td><td>95</td></tr>
+	<tr><td>Пеле</td><td>Нападающий</td><td>Бразилия</td><td>Сантос</td><td>1948</td><td>175</td><td>95</td></tr>
+	<tr><td>Месси</td><td>Правый вингер</td><td>Аргентина</td><td>ПСЖ</td><td>1987</td><td>169</td><td>93</td></tr>
+	<tr><td>Неймар</td><td>Левый вингер</td><td>Бразилия</td><td>ПСЖ</td><td>1992</td><td>174</td><td>89</td></tr>
+	<tr><td>Роналду</td><td>Нападающий</td><td>Португалия</td><td>Манчестер Юнайтед</td><td>1985</td><td>186</td><td>90</td></tr>
+	<tr><td>Холанд</td><td>Нападающий</td><td>Норвегия</td><td>Манчестер Сити</td><td>1999</td><td>200</td><td>88</td></tr>
+	<tr><td>Мбаппе</td><td>Нападающий</td><td>Франция</td><td>ПСЖ</td><td>1998</td><td>180</td><td>92</td></tr>
+	<tr><td>Зидан</td><td>Атакующий полузащитник</td><td>Франция</td><td>Реал Мадрид</td><td>1970</td><td>185</td><td>94</td></tr>
+	<tr><td>Марадона</td><td>Атакующий полузащитник</td><td>Аргентина</td><td>Наполи</td><td>1960</td><td>165</td><td>95</td></tr>
+	<tr><td>Пеле</td><td>Нападающий</td><td>Бразилия</td><td>Сантос</td><td>1948</td><td>175</td><td>95</td></tr>
+	<tr><td>Месси</td><td>Правый вингер</td><td>Аргентина</td><td>ПСЖ</td><td>1987</td><td>169</td><td>93</td></tr>
+	<tr><td>Неймар</td><td>Левый вингер</td><td>Бразилия</td><td>ПСЖ</td><td>1992</td><td>174</td><td>89</td></tr>
+	<tr><td>Роналду</td><td>Нападающий</td><td>Португалия</td><td>Манчестер Юнайтед</td><td>1985</td><td>186</td><td>90</td></tr>
+	<tr><td>Холанд</td><td>Нападающий</td><td>Норвегия</td><td>Манчестер Сити</td><td>1999</td><td>200</td><td>88</td></tr>
+	<tr><td>Мбаппе</td><td>Нападающий</td><td>Франция</td><td>ПСЖ</td><td>1998</td><td>180</td><td>92</td></tr>
+	<tr><td>Зидан</td><td>Атакующий полузащитник</td><td>Франция</td><td>Реал Мадрид</td><td>1970</td><td>185</td><td>94</td></tr>
+	<tr><td>Марадона</td><td>Атакующий полузащитник</td><td>Аргентина</td><td>Наполи</td><td>1960</td><td>165</td><td>95</td></tr>
+	<tr><td>Пеле</td><td>Нападающий</td><td>Бразилия</td><td>Сантос</td><td>1948</td><td>175</td><td>95</td></tr>
+	<tr><td>Месси</td><td>Правый вингер</td><td>Аргентина</td><td>ПСЖ</td><td>1987</td><td>169</td><td>93</td></tr>
+	<tr><td>Неймар</td><td>Левый вингер</td><td>Бразилия</td><td>ПСЖ</td><td>1992</td><td>174</td><td>89</td></tr>
+	<tr><td>Роналду</td><td>Нападающий</td><td>Португалия</td><td>Манчестер Юнайтед</td><td>1985</td><td>186</td><td>90</td></tr>
+	<tr><td>Холанд</td><td>Нападающий</td><td>Норвегия</td><td>Манчестер Сити</td><td>1999</td><td>200</td><td>88</td></tr>
+	<tr><td>Мбаппе</td><td>Нападающий</td><td>Франция</td><td>ПСЖ</td><td>1998</td><td>180</td><td>92</td></tr>
+	<tr><td>Зидан</td><td>Атакующий полузащитник</td><td>Франция</td><td>Реал Мадрид</td><td>1970</td><td>185</td><td>94</td></tr>
+	<tr><td>Марадона</td><td>Атакующий полузащитник</td><td>Аргентина</td><td>Наполи</td><td>1960</td><td>165</td><td>95</td></tr>
+	<tr><td>Пеле</td><td>Нападающий</td><td>Бразилия</td><td>Сантос</td><td>1948</td><td>175</td><td>95</td></tr>
+	<tr><td>Месси</td><td>Правый вингер</td><td>Аргентина</td><td>ПСЖ</td><td>1987</td><td>169</td><td>93</td></tr>
+	<tr><td>Неймар</td><td>Левый вингер</td><td>Бразилия</td><td>ПСЖ</td><td>1992</td><td>174</td><td>89</td></tr>
+	<tr><td>Роналду</td><td>Нападающий</td><td>Португалия</td><td>Манчестер Юнайтед</td><td>1985</td><td>186</td><td>90</td></tr>
+	<tr><td>Холанд</td><td>Нападающий</td><td>Норвегия</td><td>Манчестер Сити</td><td>1999</td><td>200</td><td>88</td></tr>
+	<tr><td>Мбаппе</td><td>Нападающий</td><td>Франция</td><td>ПСЖ</td><td>1998</td><td>180</td><td>92</td></tr>
+	<tr><td>Зидан</td><td>Атакующий полузащитник</td><td>Франция</td><td>Реал Мадрид</td><td>1970</td><td>185</td><td>94</td></tr>
+	<tr><td>Марадона</td><td>Атакующий полузащитник</td><td>Аргентина</td><td>Наполи</td><td>1960</td><td>165</td><td>95</td></tr>
+	<tr><td>Пеле</td><td>Нападающий</td><td>Бразилия</td><td>Сантос</td><td>1948</td><td>175</td><td>95</td></tr>
+	<tr><td>Месси</td><td>Правый вингер</td><td>Аргентина</td><td>ПСЖ</td><td>1987</td><td>169</td><td>93</td></tr>
+	<tr><td>Неймар</td><td>Левый вингер</td><td>Бразилия</td><td>ПСЖ</td><td>1992</td><td>174</td><td>89</td></tr>
+	<tr><td>Роналду</td><td>Нападающий</td><td>Португалия</td><td>Манчестер Юнайтед</td><td>1985</td><td>186</td><td>90</td></tr>
+	<tr><td>Холанд</td><td>Нападающий</td><td>Норвегия</td><td>Манчестер Сити</td><td>1999</td><td>200</td><td>88</td></tr>
+	<tr><td>Мбаппе</td><td>Нападающий</td><td>Франция</td><td>ПСЖ</td><td>1998</td><td>180</td><td>92</td></tr>
+	<tr><td>Зидан</td><td>Атакующий полузащитник</td><td>Франция</td><td>Реал Мадрид</td><td>1970</td><td>185</td><td>94</td></tr>
+	<tr><td>Марадона</td><td>Атакующий полузащитник</td><td>Аргентина</td><td>Наполи</td><td>1960</td><td>165</td><td>95</td></tr>
+	<tr><td>Пеле</td><td>Нападающий</td><td>Бразилия</td><td>Сантос</td><td>1948</td><td>175</td><td>95</td></tr>
+	
+</table>
+</body>
+</html>
