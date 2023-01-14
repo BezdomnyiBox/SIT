@@ -1,0 +1,632 @@
+<!DOCTYPE html>
+<html>
+  <meta charset="utf-8"/>
+  <title>Лабораторная работа №6</title>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no"/>
+  <title></title>
+  <link rel="stylesheet" href="css/bootstrap-reboot.min.css"/>
+  <link rel="stylesheet" href="css/main.css"/>
+  <link rel="stylesheet" href="main.css"/>
+</html>
+<body>
+  <nav><a class="big_text" href="index.html">Самые сильные футболисты</a><a class="big_text" href="Laba_6_2.html">Список самых сильных футболистов</a></nav>
+  <hr/>
+  <details>
+    <summary>График</summary>
+    <form>
+      <table>
+        <tbody>
+          <tr>
+            <th>Значениe по оси OX</th>
+            <th>Результат</th>
+          </tr>
+          <tr>
+            <td>
+              <input type="radio" name="ox" value="0"/>Рейтинг<br/>
+              <input type="radio" name="ox" value="1"/>Рост<br/>
+              <input type="radio" name="ox" value="3"/>Год рождения<br/>
+            </td>
+            <td>
+              <input type="checkbox" name="oy" value="0"/>Количество игроков<br/>
+              <input type="checkbox" name="oy" value="1"/>Количество игроков<br/>
+              <input type="checkbox" name="oy" value="3"/>Количество игроков<br/>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+      <input type="button" value="Построить"/>
+      <p>Здесь будет график</p>
+    </form>
+  </details>
+  <details>
+    <summary>Фильтр</summary>
+    <form>
+      <p>
+        <label for="structure">Имя:</label>
+        <input type="text" name="familia"/>
+      </p>
+      <p>
+        <label for="category">Амплуа:</label>
+        <input type="text" name="category"/>
+      </p>
+      <p>
+        <label for="country">Национальность:</label>
+        <input type="text" name="country"/>
+      </p>
+      <p>
+        <label for="club">Клуб:</label>
+        <input type="text" name="club"/>
+      </p>
+      <p>
+        <label for="yFrom">Год рождения:</label>
+        <input type="text" name="yFrom"/> до 
+        <input type="text" name="yFo"/>
+      </p>
+      <p>
+        <label for="hFrom">Рост:</label> 
+        <input type="text" name="hFrom"/> до 
+        <input type="text" name="hTo"/>
+      </p>
+      <p>
+        <label for="rFrom">Рейтинг:</label> 
+        <input type="text" name="rFrom"/> до 
+        <input type="text" name="rFo"/>
+      </p>
+      <input type="button" value="Найти"/>
+    </form>
+  </details>
+  <details>
+    <summary>Сортировка</summary>
+    <form>
+      <p>Первый уровень:
+        <select name="sortFirst">
+          <option value="0">Нет</option>
+          <option value="1">Имя</option>
+          <option value="2">Амплуа</option>
+          <option value="3">Национальность</option>
+          <option value="4">Клуб</option>
+          <option value="5">Год рождения</option>
+          <option value="6">Рост</option>
+          <option value="7">Рейтинг</option>
+        </select>по убыванию? 
+        <input type="checkbox" name="descFirst"/>
+      </p>
+      <p>Второй уровень:
+        <select name="sortSecond">
+          <option value="0">Нет</option>
+          <option value="1">Имя</option>
+          <option value="2">Амплуа</option>
+          <option value="3">Национальность</option>
+          <option value="4">Клуб</option>
+          <option value="5">Год рождения</option>
+          <option value="6">Рост</option>
+          <option value="7">Рейтинг</option>
+        </select>по убыванию? 
+        <input type="checkbox" name="descSecond"/>
+      </p>
+      <p>Третий уровень:
+        <select name="sortThird">
+          <option value="0">Нет</option>
+          <option value="1">Имя</option>
+          <option value="2">Амплуа</option>
+          <option value="3">Национальность</option>
+          <option value="4">Клуб</option>
+          <option value="5">Год рождения</option>
+          <option value="6">Рост</option>
+          <option value="7">Рейтинг</option>
+        </select>по убыванию? 
+        <input type="checkbox" name="descThird"/>
+      </p>
+      <input type="button" value="Сортировать"/>
+    </form>
+  </details><br/>
+  <table border="1" cellspacing="0" cellpadding="5">
+    <tbody>
+      <tr>
+        <th>Имя</th>
+        <th>Амплуа</th>
+        <th>Национальность</th>
+        <th>Клуб</th>
+        <th>Год рождения</th>
+        <th>Рост, см</th>
+        <th>Рейтинг</th>
+      </tr>
+      <tr>
+        <td>Месси</td>
+        <td>Правый вингер</td>
+        <td>Аргентина</td>
+        <td>ПСЖ</td>
+        <td>1987</td>
+        <td>169</td>
+        <td>93</td>
+      </tr>
+      <tr>
+        <td>Неймар</td>
+        <td>Левый вингер</td>
+        <td>Бразилия</td>
+        <td>ПСЖ</td>
+        <td>1992</td>
+        <td>174</td>
+        <td>89</td>
+      </tr>
+      <tr>
+        <td>Роналду</td>
+        <td>Нападающий</td>
+        <td>Португалия</td>
+        <td>Манчестер Юнайтед</td>
+        <td>1985</td>
+        <td>186</td>
+        <td>90</td>
+      </tr>
+      <tr>
+        <td>Холанд</td>
+        <td>Нападающий</td>
+        <td>Норвегия</td>
+        <td>Манчестер Сити</td>
+        <td>1999</td>
+        <td>200</td>
+        <td>88</td>
+      </tr>
+      <tr>
+        <td>Мбаппе</td>
+        <td>Нападающий</td>
+        <td>Франция</td>
+        <td>ПСЖ</td>
+        <td>1998</td>
+        <td>180</td>
+        <td>92</td>
+      </tr>
+      <tr>
+        <td>Зидан</td>
+        <td>Атакующий полузащитник</td>
+        <td>Франция</td>
+        <td>Реал Мадрид</td>
+        <td>1970</td>
+        <td>185</td>
+        <td>94</td>
+      </tr>
+      <tr>
+        <td>Марадона</td>
+        <td>Атакующий полузащитник</td>
+        <td>Аргентина</td>
+        <td>Наполи</td>
+        <td>1960</td>
+        <td>165</td>
+        <td>95</td>
+      </tr>
+      <tr>
+        <td>Пеле</td>
+        <td>Нападающий</td>
+        <td>Бразилия</td>
+        <td>Сантос</td>
+        <td>1948</td>
+        <td>175</td>
+        <td>95</td>
+      </tr>
+      <tr>
+        <td>Буффон Джанлуиджи</td>
+        <td>Вратарь</td>
+        <td>Италия</td>
+        <td>Ювентус</td>
+        <td>1981</td>
+        <td>189</td>
+        <td>87</td>
+      </tr>
+      <tr>
+        <td>Иньеста Андрес</td>
+        <td>Полузащитник</td>
+        <td>Испания</td>
+        <td>Барселона</td>
+        <td>1986</td>
+        <td>170</td>
+        <td>92</td>
+      </tr>
+      <tr>
+        <td>Касильяс Икер</td>
+        <td>Вратарь</td>
+        <td>Испания</td>
+        <td>Реал Мадрид</td>
+        <td>1983</td>
+        <td>185</td>
+        <td>90</td>
+      </tr>
+      <tr>
+        <td>Кьеллини Джорджо</td>
+        <td>Защитник</td>
+        <td>Италия</td>
+        <td>Ювентус</td>
+        <td>1983</td>
+        <td>190</td>
+        <td>88</td>
+      </tr>
+      <tr>
+        <td>Джеррард Стивен</td>
+        <td>Полузащитник</td>
+        <td>Англия</td>
+        <td>Ливерпуль</td>
+        <td>1982</td>
+        <td>184</td>
+        <td>89</td>
+      </tr>
+      <tr>
+        <td>Видаль Артуро</td>
+        <td>Полузащитник</td>
+        <td>Чили</td>
+        <td>Ювентус</td>
+        <td>1988</td>
+        <td>185</td>
+        <td>85</td>
+      </tr>
+      <tr>
+        <td>Суарес Луис</td>
+        <td>Нападающий</td>
+        <td>Уругвай</td>
+        <td>Барселона</td>
+        <td>1987</td>
+        <td>183</td>
+        <td>91</td>
+      </tr>
+      <tr>
+        <td>Маркизио Клаудио</td>
+        <td>Защитник</td>
+        <td>Италия</td>
+        <td>Ювентус</td>
+        <td>1982</td>
+        <td>185</td>
+        <td>83</td>
+      </tr>
+      <tr>
+        <td>Лэмпард Фрэнк</td>
+        <td>Полузащитник</td>
+        <td>Англия</td>
+        <td>Челси</td>
+        <td>1982</td>
+        <td>182</td>
+        <td>88</td>
+      </tr>
+      <tr>
+        <td>Руни Уэйн</td>
+        <td>Нападающий</td>
+        <td>Англия</td>
+        <td>Манчестер Юнайтед</td>
+        <td>1985</td>
+        <td>184</td>
+        <td>89</td>
+      </tr>
+      <tr>
+        <td>Хави Эрнандес</td>
+        <td>Полузащитник</td>
+        <td>Испания</td>
+        <td>Барселона</td>
+        <td>1981</td>
+        <td>170</td>
+        <td>90</td>
+      </tr>
+      <tr>
+        <td>Тотти Франческо</td>
+        <td>Полузащитник</td>
+        <td>Италия</td>
+        <td>Рома</td>
+        <td>1982</td>
+        <td>179</td>
+        <td>88</td>
+      </tr>
+      <tr>
+        <td>Ибрагимович Златан</td>
+        <td>Нападающий</td>
+        <td>Швеция</td>
+        <td>ПСЖ</td>
+        <td>1982</td>
+        <td>195</td>
+        <td>89</td>
+      </tr>
+      <tr>
+        <td>Ройс Марко</td>
+        <td>Полузащитник</td>
+        <td>Германия</td>
+        <td>Боруссия Дортмунд</td>
+        <td>1992</td>
+        <td>181</td>
+        <td>87</td>
+      </tr>
+      <tr>
+        <td>Ван Перси Робин</td>
+        <td>Нападающий</td>
+        <td>Нидерланды</td>
+        <td>Манчестер Юнайтед</td>
+        <td>1986</td>
+        <td>185</td>
+        <td>87</td>
+      </tr>
+      <tr>
+        <td>Бэйл Гарет</td>
+        <td>Нападающий</td>
+        <td>Уэльс</td>
+        <td>Тоттенхем</td>
+        <td>1992</td>
+        <td>185</td>
+        <td>86</td>
+      </tr>
+      <tr>
+        <td>Гиггз Райан</td>
+        <td>Нападающий</td>
+        <td>Уэльс</td>
+        <td>Манчестер Юнайтед</td>
+        <td>1978</td>
+        <td>185</td>
+        <td>86</td>
+      </tr>
+      <tr>
+        <td>Пуйоль Карлес</td>
+        <td>Защитник</td>
+        <td>Испания</td>
+        <td>Барселона</td>
+        <td>1981</td>
+        <td>185</td>
+        <td>89</td>
+      </tr>
+      <tr>
+        <td>Скоулз Пол</td>
+        <td>Полузащитник</td>
+        <td>Англия</td>
+        <td>Манчестер Юнайтед</td>
+        <td>1979</td>
+        <td>175</td>
+        <td>90</td>
+      </tr>
+      <tr>
+        <td>Терри Джон</td>
+        <td>Защитник</td>
+        <td>Англия</td>
+        <td>Челси</td>
+        <td>1983</td>
+        <td>185</td>
+        <td>88</td>
+      </tr>
+      <tr>
+        <td>Мюллер Томас</td>
+        <td>Полузащитник</td>
+        <td>Германия</td>
+        <td>Бавария</td>
+        <td>1987</td>
+        <td>185</td>
+        <td>87</td>
+      </tr>
+      <tr>
+        <td>Вилья Давид</td>
+        <td>Нападающий</td>
+        <td>Испания</td>
+        <td>Барселона</td>
+        <td>1985</td>
+        <td>175</td>
+        <td>88</td>
+      </tr>
+      <tr>
+        <td>Уилшер Джек</td>
+        <td>Полузащитник</td>
+        <td>Англия</td>
+        <td>Арсенал</td>
+        <td>1992</td>
+        <td>170</td>
+        <td>81</td>
+      </tr>
+      <tr>
+        <td>Торрес Фернандо</td>
+        <td>Нападающий</td>
+        <td>Испания</td>
+        <td>Челси</td>
+        <td>1982</td>
+        <td>185</td>
+        <td>86</td>
+      </tr>
+      <tr>
+        <td>Азар Эден</td>
+        <td>Полузащитник</td>
+        <td>Бельгия</td>
+        <td>Челси</td>
+        <td>1992</td>
+        <td>172</td>
+        <td>89</td>
+      </tr>
+      <tr>
+        <td>Эль-Шаарави Стефан</td>
+        <td>Полузащитник</td>
+        <td>Италия</td>
+        <td>Рома</td>
+        <td>1992</td>
+        <td>175</td>
+        <td>78</td>
+      </tr>
+      <tr>
+        <td>Мата Хуан</td>
+        <td>Полузащитник</td>
+        <td>Испания</td>
+        <td>Челси</td>
+        <td>1987</td>
+        <td>175</td>
+        <td>86</td>
+      </tr>
+      <tr>
+        <td>Фалькао Радамель</td>
+        <td>Нападающий</td>
+        <td>Колумбия</td>
+        <td>Челси</td>
+        <td>1987</td>
+        <td>175</td>
+        <td>87</td>
+      </tr>
+      <tr>
+        <td>Де Росси Даниэле</td>
+        <td>Полузащитник</td>
+        <td>Италия</td>
+        <td>Рома</td>
+        <td>1983</td>
+        <td>185</td>
+        <td>85</td>
+      </tr>
+      <tr>
+        <td>Квальярелла Фабио</td>
+        <td>Нападающий</td>
+        <td>Италия</td>
+        <td>Ювентус</td>
+        <td>1984</td>
+        <td>185</td>
+        <td>83</td>
+      </tr>
+      <tr>
+        <td>Чех Петр</td>
+        <td>Вратарь</td>
+        <td>Чехия</td>
+        <td>Челси</td>
+        <td>1983</td>
+        <td>194</td>
+        <td>90</td>
+      </tr>
+      <tr>
+        <td>Де Хеа Давид</td>
+        <td>Нападающий</td>
+        <td>Испания</td>
+        <td>Манчестер Юнайтед</td>
+        <td>1993</td>
+        <td>175</td>
+        <td>87</td>
+      </tr>
+      <tr>
+        <td>Чичарито</td>
+        <td>Нападающий</td>
+        <td>Мексика</td>
+        <td>Манчестер Юнайтед</td>
+        <td>1989</td>
+        <td>185</td>
+        <td>82</td>
+      </tr>
+      <tr>
+        <td>Швайнштайгер Бастиан</td>
+        <td>Полузащитник</td>
+        <td>Германия</td>
+        <td>Бавария</td>
+        <td>1985</td>
+        <td>175</td>
+        <td>88</td>
+      </tr>
+      <tr>
+        <td>Рибери Франк</td>
+        <td>Полузащитник</td>
+        <td>Франция</td>
+        <td>Бавария</td>
+        <td>1983</td>
+        <td>175</td>
+        <td>89</td>
+      </tr>
+      <tr>
+        <td>Дзанетти Хавьер</td>
+        <td>Правый защитник</td>
+        <td>Аргентина</td>
+        <td>Интер</td>
+        <td>1983</td>
+        <td>185</td>
+        <td>86</td>
+      </tr>
+      <tr>
+        <td>Рамос Серхио</td>
+        <td>Защитник</td>
+        <td>Испания</td>
+        <td>Реал Мадрид</td>
+        <td>1987</td>
+        <td>185</td>
+        <td>89</td>
+      </tr>
+      <tr>
+        <td>Акинфеев Игорь</td>
+        <td>Вратарь</td>
+        <td>Россия</td>
+        <td>ЦСКА</td>
+        <td>1987</td>
+        <td>186</td>
+        <td>83</td>
+      </tr>
+      <tr>
+        <td>Гётце Марио</td>
+        <td>Нападающий</td>
+        <td>Германия</td>
+        <td>Бавария</td>
+        <td>1992</td>
+        <td>170</td>
+        <td>82</td>
+        <tr>
+          <td>Уолкотт Тео</td>
+          <td>Нападающий</td>
+          <td>Англия</td>
+          <td>Арсенал</td>
+          <td>1990</td>
+          <td>175</td>
+          <td>80</td>
+        </tr>
+        <tr>
+          <td>Снейдер Уэсли</td>
+          <td>Полузащитник</td>
+          <td>Нидерланды</td>
+          <td>Интер</td>
+          <td>1983</td>
+          <td>180</td>
+          <td>87</td>
+        </tr>
+        <tr>
+          <td>Альба Жорди</td>
+          <td>Левый защитник</td>
+          <td>Испания</td>
+          <td>Барселона</td>
+          <td>1990</td>
+          <td>170</td>
+          <td>85</td>
+        </tr>
+        <tr>
+          <td>Хуммельс Матс</td>
+          <td>Защитник</td>
+          <td>Германия</td>
+          <td>Бавария</td>
+          <td>1987</td>
+          <td>190</td>
+          <td>88</td>
+        </tr>
+        <tr>
+          <td>Левандовски Роберт</td>
+          <td>Нападающий</td>
+          <td>Польша</td>
+          <td>Бавария</td>
+          <td>1987</td>
+          <td>185</td>
+          <td>90</td>
+        </tr>
+        <tr>
+          <td>Кокорин Александр</td>
+          <td>Нападающий</td>
+          <td>Россия</td>
+          <td>Зенит</td>
+          <td>1990</td>
+          <td>178</td>
+          <td>77</td>
+        </tr>
+        <tr>
+          <td>Лам Филипп</td>
+          <td>Правый защитник</td>
+          <td>Германия</td>
+          <td>Бавария</td>
+          <td>1987</td>
+          <td>175</td>
+          <td>89</td>
+        </tr>
+        <tr>
+          <td>Вермален Томас</td>
+          <td>Защитник</td>
+          <td>Бельгия</td>
+          <td>Барселона</td>
+          <td>1990</td>
+          <td>185</td>
+          <td>82</td>
+        </tr>
+      </tr>
+    </tbody>
+  </table>
+</body>

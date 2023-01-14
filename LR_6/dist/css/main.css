@@ -1,0 +1,106 @@
+html {
+  background-color: #0d4f02;
+}
+html p {
+  font-family: "Arial";
+  font-size: 20px;
+  text-align: justify;
+  line-height: 2;
+  text-indent: 40px;
+  word-spacing: 10px;
+  margin: 2.5%;
+}
+head,
+body {
+  background-color: rgba(224,168,27,0.69);
+  margin: 20px;
+  padding: 0px;
+}
+.img500_500_M {
+  background: url("../img/Maradona.jpg");
+  display: block;
+  margin: auto;
+  width: 720px;
+  height: 720px;
+}
+.img500_500_M:hover {
+  width: 600px;
+  height: 408px;
+  background: url("../img/Maradona_2.jpg");
+  transition: 3s;
+}
+.img500_500_P {
+  background: url("../img/Pele.jpg");
+  display: block;
+  margin: auto;
+  width: 670px;
+  height: 670px;
+}
+.img500_500_P:hover {
+  width: 640px;
+  height: 360px;
+  background: url("../img/Pele_2.jpg");
+  transition: 3s;
+}
+.img500_500_Z {
+  background: url("../img/Zidan.jpeg");
+  display: block;
+  margin: auto;
+  width: 660px;
+  height: 752px;
+}
+.img500_500_Z:hover {
+  width: 595px;
+  height: 414px;
+  background: url("../img/Zidan_2.gif");
+  transition: 2s;
+}
+.img200_200 {
+  margin: 10px;
+  width: 17%;
+  height: 17%;
+}
+.img_600_600 {
+  display: block;
+  margin: auto;
+  width: 600px;
+  height: 600px;
+}
+.img200_200:hover {
+  transition: 1s;
+  transform: scale(1.2);
+}
+.big_text {
+  font-weight: bold;
+  font-size: 18px;
+}
+.cool_text {
+  text-align: center;
+  font-family: "Monotype Corsiva";
+  font-weight: bold;
+  font-size: 24px;
+}
+@media (max-width: 600px) {
+  .img200_200 {
+    margin: 10px;
+    width: 30%;
+    height: 30%;
+  }
+  nav a {
+    margin: 2px;
+  }
+}
+nav {
+  display: grid;
+  justify-items: center;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: 50px;
+  background-color: #e3e3e3;
+}
+nav a {
+  text-decoration: none;
+  align-self: center;
+}
+nav a:hover {
+  text-decoration: underline;
+}

@@ -1,0 +1,567 @@
+<!DOCTYPE html>
+html
+  title Лабораторная работа №6
+  include headCode
+body
+    nav
+      a.big_text(href='index.html') Самые сильные футболисты
+      a.big_text(href='index_2.html') Список самых сильных футболистов
+    hr
+    details
+      summary График
+      form
+        table
+          tbody
+            tr
+              th Значениe по оси OX
+              th Результат
+            tr
+              td
+                input(type='radio', name='ox', value='0')
+                | Рейтинг
+                br
+                input(type='radio', name='ox', value='1')
+                | Рост
+                br
+                input(type='radio', name='ox', value='3')
+                | Год рождения
+                br
+              td
+                input(type='checkbox', name='oy', value='0')
+                | Количество игроков
+                br
+                input(type='checkbox', name='oy', value='1')
+                | Количество игроков
+                br
+                input(type='checkbox', name='oy', value='3')
+                | Количество игроков
+                br
+        input(type='button', value='Построить')
+        p Здесь будет график
+    details
+      summary Фильтр
+      form
+        p
+          label(for='structure') Имя:
+          input(type='text', name='familia')
+        p
+          label(for='category') Амплуа:
+          input(type='text', name='category')
+        p
+          label(for='country') Национальность:
+          input(type='text', name='country')
+        p
+          label(for='club') Клуб:
+          input(type='text', name='club')
+        p
+          label(for='yFrom') Год рождения:
+          input(type='text', name='yFrom')
+          |  до 
+          input(type='text', name='yFo')
+        p
+          label(for='hFrom') Рост:
+          | 
+          input(type='text', name='hFrom')
+          |  до 
+          input(type='text', name='hTo')
+        p
+          label(for='rFrom') Рейтинг:
+          |  
+          input(type='text', name='rFrom')
+          |  до 
+          input(type='text', name='rFo')
+        input(type='button', value='Найти')
+    details
+      summary Сортировка
+      form
+        p
+          | Первый уровень:
+          select(name='sortFirst')
+            option(value='0') Нет
+            option(value='1') Имя
+            option(value='2') Амплуа
+            option(value='3') Национальность
+            option(value='4') Клуб
+            option(value='5') Год рождения
+            option(value='6') Рост
+            option(value='7') Рейтинг
+          | по убыванию? 
+          input(type='checkbox', name='descFirst')
+        p
+          | Второй уровень:
+          select(name='sortSecond')
+            option(value='0') Нет
+            option(value='1') Имя
+            option(value='2') Амплуа
+            option(value='3') Национальность
+            option(value='4') Клуб
+            option(value='5') Год рождения
+            option(value='6') Рост
+            option(value='7') Рейтинг
+          | по убыванию? 
+          input(type='checkbox', name='descSecond')
+        p
+          | Третий уровень:
+          select(name='sortThird')
+            option(value='0') Нет
+            option(value='1') Имя
+            option(value='2') Амплуа
+            option(value='3') Национальность
+            option(value='4') Клуб
+            option(value='5') Год рождения
+            option(value='6') Рост
+            option(value='7') Рейтинг
+          | по убыванию? 
+          input(type='checkbox', name='descThird')
+        input(type='button', value='Сортировать')
+    br
+    table(border='1', cellspacing='0', cellpadding='5')
+      tbody
+        tr
+          th Имя
+          th Амплуа
+          th Национальность
+          th Клуб
+          th Год рождения
+          th Рост, см
+          th Рейтинг
+        tr
+          td Месси
+          td Правый вингер
+          td Аргентина
+          td ПСЖ
+          td 1987
+          td 169
+          td 93
+        tr
+          td Неймар
+          td Левый вингер
+          td Бразилия
+          td ПСЖ
+          td 1992
+          td 174
+          td 89
+        tr
+          td Роналду
+          td Нападающий
+          td Португалия
+          td Манчестер Юнайтед
+          td 1985
+          td 186
+          td 90
+        tr
+          td Холанд
+          td Нападающий
+          td Норвегия
+          td Манчестер Сити
+          td 1999
+          td 200
+          td 88
+        tr
+          td Мбаппе
+          td Нападающий
+          td Франция
+          td ПСЖ
+          td 1998
+          td 180
+          td 92
+        tr
+          td Зидан
+          td Атакующий полузащитник
+          td Франция
+          td Реал Мадрид
+          td 1970
+          td 185
+          td 94
+        tr
+          td Марадона
+          td Атакующий полузащитник
+          td Аргентина
+          td Наполи
+          td 1960
+          td 165
+          td 95
+        tr
+          td Пеле
+          td Нападающий
+          td Бразилия
+          td Сантос
+          td 1948
+          td 175
+          td 95
+        tr
+          td Буффон Джанлуиджи
+          td Вратарь
+          td Италия
+          td Ювентус
+          td 1981
+          td 189
+          td 87
+        tr
+          td Иньеста Андрес
+          td Полузащитник
+          td Испания
+          td Барселона
+          td 1986
+          td 170
+          td 92
+        tr
+          td Касильяс Икер
+          td Вратарь
+          td Испания
+          td Реал Мадрид
+          td 1983
+          td 185
+          td 90
+        tr
+          td Кьеллини Джорджо
+          td Защитник
+          td Италия
+          td Ювентус
+          td 1983
+          td 190
+          td 88
+        tr
+          td Джеррард Стивен
+          td Полузащитник
+          td Англия
+          td Ливерпуль
+          td 1982
+          td 184
+          td 89
+        tr
+          td Видаль Артуро
+          td Полузащитник
+          td Чили
+          td Ювентус
+          td 1988
+          td 185
+          td 85
+        tr
+          td Суарес Луис
+          td Нападающий
+          td Уругвай
+          td Барселона
+          td 1987
+          td 183
+          td 91
+        tr
+          td Маркизио Клаудио
+          td Защитник
+          td Италия
+          td Ювентус
+          td 1982
+          td 185
+          td 83
+        tr
+          td Лэмпард Фрэнк
+          td Полузащитник
+          td Англия
+          td Челси
+          td 1982
+          td 182
+          td 88
+        tr
+          td Руни Уэйн
+          td Нападающий
+          td Англия
+          td Манчестер Юнайтед
+          td 1985
+          td 184
+          td 89
+        tr
+          td Хави Эрнандес
+          td Полузащитник
+          td Испания
+          td Барселона
+          td 1981
+          td 170
+          td 90
+        tr
+          td Тотти Франческо
+          td Полузащитник
+          td Италия
+          td Рома
+          td 1982
+          td 179
+          td 88
+        tr
+          td Ибрагимович Златан
+          td Нападающий
+          td Швеция
+          td ПСЖ
+          td 1982
+          td 195
+          td 89
+        tr
+          td Ройс Марко
+          td Полузащитник
+          td Германия
+          td Боруссия Дортмунд
+          td 1992
+          td 181
+          td 87
+        tr
+          td Ван Перси Робин
+          td Нападающий
+          td Нидерланды
+          td Манчестер Юнайтед
+          td 1986
+          td 185
+          td 87
+        tr
+          td Бэйл Гарет
+          td Нападающий
+          td Уэльс
+          td Тоттенхем
+          td 1992
+          td 185
+          td 86
+        tr
+          td Гиггз Райан
+          td Нападающий
+          td Уэльс
+          td Манчестер Юнайтед
+          td 1978
+          td 185
+          td 86
+        tr
+          td Пуйоль Карлес
+          td Защитник
+          td Испания
+          td Барселона
+          td 1981
+          td 185
+          td 89
+        tr
+          td Скоулз Пол
+          td Полузащитник
+          td Англия
+          td Манчестер Юнайтед
+          td 1979
+          td 175
+          td 90
+        tr
+          td Терри Джон
+          td Защитник
+          td Англия
+          td Челси
+          td 1983
+          td 185
+          td 88
+        tr
+          td Мюллер Томас
+          td Полузащитник
+          td Германия
+          td Бавария
+          td 1987
+          td 185
+          td 87
+        tr
+          td Вилья Давид
+          td Нападающий
+          td Испания
+          td Барселона
+          td 1985
+          td 175
+          td 88
+        tr
+          td Уилшер Джек
+          td Полузащитник
+          td Англия
+          td Арсенал
+          td 1992
+          td 170
+          td 81
+        tr
+          td Торрес Фернандо
+          td Нападающий
+          td Испания
+          td Челси
+          td 1982
+          td 185
+          td 86
+        tr
+          td Азар Эден
+          td Полузащитник
+          td Бельгия
+          td Челси
+          td 1992
+          td 172
+          td 89
+        tr
+          td Эль-Шаарави Стефан
+          td Полузащитник
+          td Италия
+          td Рома
+          td 1992
+          td 175
+          td 78
+        tr
+          td Мата Хуан
+          td Полузащитник
+          td Испания
+          td Челси
+          td 1987
+          td 175
+          td 86
+        tr
+          td Фалькао Радамель
+          td Нападающий
+          td Колумбия
+          td Челси
+          td 1987
+          td 175
+          td 87
+        tr
+          td Де Росси Даниэле
+          td Полузащитник
+          td Италия
+          td Рома
+          td 1983
+          td 185
+          td 85
+        tr
+          td Квальярелла Фабио
+          td Нападающий
+          td Италия
+          td Ювентус
+          td 1984
+          td 185
+          td 83
+        tr
+          td Чех Петр
+          td Вратарь
+          td Чехия
+          td Челси
+          td 1983
+          td 194
+          td 90
+        tr
+          td Де Хеа Давид
+          td Нападающий
+          td Испания
+          td Манчестер Юнайтед
+          td 1993
+          td 175
+          td 87
+        tr
+          td Чичарито
+          td Нападающий
+          td Мексика
+          td Манчестер Юнайтед
+          td 1989
+          td 185
+          td 82
+        tr
+          td Швайнштайгер Бастиан
+          td Полузащитник
+          td Германия
+          td Бавария
+          td 1985
+          td 175
+          td 88
+        tr
+          td Рибери Франк
+          td Полузащитник
+          td Франция
+          td Бавария
+          td 1983
+          td 175
+          td 89
+        tr
+          td Дзанетти Хавьер
+          td Правый защитник
+          td Аргентина
+          td Интер
+          td 1983
+          td 185
+          td 86
+        tr
+          td Рамос Серхио
+          td Защитник
+          td Испания
+          td Реал Мадрид
+          td 1987
+          td 185
+          td 89
+        tr
+          td Акинфеев Игорь
+          td Вратарь
+          td Россия
+          td ЦСКА
+          td 1987
+          td 186
+          td 83
+        tr
+          td Гётце Марио
+          td Нападающий
+          td Германия
+          td Бавария
+          td 1992
+          td 170
+          td 82
+          tr
+            td Уолкотт Тео
+            td Нападающий
+            td Англия
+            td Арсенал
+            td 1990
+            td 175
+            td 80
+          tr
+            td Снейдер Уэсли
+            td Полузащитник
+            td Нидерланды
+            td Интер
+            td 1983
+            td 180
+            td 87
+          tr
+            td Альба Жорди
+            td Левый защитник
+            td Испания
+            td Барселона
+            td 1990
+            td 170
+            td 85
+          tr
+            td Хуммельс Матс
+            td Защитник
+            td Германия
+            td Бавария
+            td 1987
+            td 190
+            td 88
+          tr
+            td Левандовски Роберт
+            td Нападающий
+            td Польша
+            td Бавария
+            td 1987
+            td 185
+            td 90
+          tr
+            td Кокорин Александр
+            td Нападающий
+            td Россия
+            td Зенит
+            td 1990
+            td 178
+            td 77
+          tr
+            td Лам Филипп
+            td Правый защитник
+            td Германия
+            td Бавария
+            td 1987
+            td 175
+            td 89
+          tr
+            td Вермален Томас
+            td Защитник
+            td Бельгия
+            td Барселона
+            td 1990
+            td 185
+            td 82
