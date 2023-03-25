@@ -1,0 +1,32 @@
+    <script>
+   let userInput;
+   let max;
+   let nomer = 0;
+
+while (userInput = prompt('Введите число', '')) {
+   
+    
+  if (isNaN(parseFloat(userInput)) || !isFinite(userInput)) {
+    alert('Было введено не число, стоп работы');
+    nomer = 0;
+    break;
+  }
+  else{
+   userInput = parseFloat(userInput);
+   if(nomer == 0) {
+       max = userInput;
+   }
+   else if(nomer % 3 == 0){
+       if(max < userInput) max = userInput;
+   }
+
+      nomer++;
+  }
+
+}
+
+if(isNaN(parseFloat(max)) || !isFinite(max)){
+     alert('Максимальное на позиции кратной 3 так и не найдено');
+}
+else alert(max);
+    </script>

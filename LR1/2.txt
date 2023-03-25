@@ -1,0 +1,79 @@
+<html>
+    <style>
+        .white {
+    background: LightGrey;
+    width: 40px;
+    height: 40px;
+    text-align: center;
+}
+.black {
+    background: black;
+    width: 40px;
+    height: 40px;
+    text-align: center;
+}
+
+    </style>
+<script>
+let n = prompt('n=');
+
+function fibo(x) {
+  return x <= 1 ? x : fibo(x - 1) + fibo(x - 2);
+}
+
+    if (isNaN(parseFloat(n)) || !isFinite(n)) {
+        alert('Было введено не число, стоп работы');
+  }
+    else if(parseFloat(n)<3 || parseFloat(n)>15){
+        alert('Было введено число больше 15 или меньше 3, стоп работы');
+      }
+    else{
+    n = parseFloat(n);
+    let strBeg = '<hr width=';
+    let htmlhr1 = '';
+
+    for(let i = 0; i < n; i++){
+        let a = 100 - (100/n)*i;
+        htmlhr1 += strBeg + a +'%>';
+    }
+    
+    let htmlhr2 = '';
+
+    for(let i = 0; i < n; i++){
+        let a = (100/n)*(i+1);
+        htmlhr2 += strBeg + a +'%>';
+    }
+    
+    let table = '<table align = "center">';
+    
+    for (let i = 0; i < n; i++){
+  table += '<tr>';
+  for (let j = 0; j < n; j++) {
+     let classTd = 'white';
+     let fib;
+      if((i+j+1)<(n/2)) classTd = 'black';
+      if((i+j+1)>(n*3/2)) classTd = 'black';
+      if(j > (i + n/2)) classTd = 'black';
+      if(i > (j + n/2)) classTd = 'black';
+      
+      if(classTd == 'white') fib = fibo(i+2);
+     
+     table += `<td class=${ classTd }>${fib}</td>`;
+  }
+  table += '</tr>';
+}
+ table += '</table>'
+    
+    
+    
+    
+document.write(htmlhr1);
+document.write(table);
+document.write(htmlhr2);
+  }
+    
+</script>
+  <body>
+
+  </body>
+  </html>
